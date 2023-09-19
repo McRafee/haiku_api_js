@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+
+# Environment configuration
+.env
+
+# Log files
+logs/
+
+# Dependency directories
+bin/
+lib/
+dist/
+*.egg-info/
+*.egg/
+node_modules/
+.pnpm/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Visual Studio Code configuration
+.vscode/
+
+# macOS directory attributes
+.DS_Store
+
+# Windows thumbnail cache files
+Thumbs.db
+
+# Yarn Integrity file
+.yarn-integrity

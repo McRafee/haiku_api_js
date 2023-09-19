@@ -14,13 +14,13 @@ To run the Haiku API locally, follow these steps:
 1. Clone the repository to your local machine:
 
    ```
-   git clone https://github.com/McRafee/haiku-api.git
+   git clone https://github.com/McRafee/haiku_api_js.git
    ```
 
 2. Navigate to the project directory:
 
    ```
-   cd haiku-api
+   cd haiku_api_js
    ```
 
 3. Install the required dependencies using npm (Node Package Manager):

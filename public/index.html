@@ -9,8 +9,20 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
 		/>
+
 		<!-- Includi il CSS personalizzato per l'effetto vetro sfumato -->
 		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				overflow: hidden;
+			}
+
+			html {
+				overflow-y: hidden;
+			}
+
 			body {
 				background: rgb(1, 197, 251);
 				background: radial-gradient(
@@ -35,7 +47,7 @@
 				-webkit-backdrop-filter: blur(5px);
 				border: 1px solid rgba(71, 80, 143, 0.3);
 				padding: 30px;
-				max-width: 500px;
+				max-width: 450px;
 				margin: 0 auto;
 				text-align: center;
 				font-family: "Comic Neue", cursive;
@@ -62,7 +74,6 @@
 				</div>
 			</div>
 		</div>
-
 		<script>
 			// Funzione per ottenere un haiku casuale
 			function getRandomHaiku() {

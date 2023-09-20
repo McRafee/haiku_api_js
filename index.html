@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Random Haiku</title>
+		<!-- Includi il CSS di Bulma con tema scuro -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+		/>
+		<!-- Includi il CSS personalizzato per l'effetto vetro sfumato -->
+		<style>
+			body {
+				background: rgb(1, 197, 251);
+				background: radial-gradient(
+					circle,
+					rgba(1, 197, 251, 1) 0%,
+					rgba(150, 233, 148, 1) 100%
+				);
+			}
+
+			.container {
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.glass-container {
+				background: rgba(71, 80, 143, 0.2);
+				border-radius: 16px;
+				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+				backdrop-filter: blur(5px);
+				-webkit-backdrop-filter: blur(5px);
+				border: 1px solid rgba(71, 80, 143, 0.3);
+				padding: 30px;
+				max-width: 500px;
+				margin: 0 auto;
+				text-align: center;
+				font-family: "Comic Neue", cursive;
+			}
+		</style>
+		<!-- Collegati a Google Fonts per il font "Homemade Apple" -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="columns is-vcentered is-centered">
+				<div class="column is-half">
+					<div class="glass-container">
+						<h1 class="title is-3">Random Haiku</h1>
+						<p id="haiku-text" class="subtitle is-5">Loading Haiku...</p>
+						<button id="refresh-button" class="button is-danger">
+							Refresh
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			// Funzione per ottenere un haiku casuale
+			function getRandomHaiku() {
+				fetch("https://jealous-mighty-hippopotamus.glitch.me/getRandom") // Sostituisci con l'URL dell'API
+					.then((response) => response.json())
+					.then((data) => {
+						// Sostituisci ogni '\n' con un tag <br> per i caratteri di nuova riga
+						const formattedText = data.text.replace(/\n/g, "<br>");
+						document.getElementById("haiku-text").innerHTML = formattedText;
+					})
+					.catch((error) => console.error(error));
+			}
+
+			// Aggiungi un gestore di eventi per il pulsante "Refresh"
+			document
+				.getElementById("refresh-button")
+				.addEventListener("click", getRandomHaiku);
+
+			// Inizialmente, ottieni un haiku casuale al caricamento della pagina
+			getRandomHaiku();
+		</script>
+	</body>
+</html>

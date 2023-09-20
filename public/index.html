@@ -66,7 +66,7 @@
 		<script>
 			// Funzione per ottenere un haiku casuale
 			function getRandomHaiku() {
-				fetch("https://jealous-mighty-hippopotamus.glitch.me/getRandom") // Sostituisci con l'URL dell'API
+				fetch("/getRandom") // Sostituisci con l'URL dell'API
 					.then((response) => response.json())
 					.then((data) => {
 						// Sostituisci ogni '\n' con un tag <br> per i caratteri di nuova riga

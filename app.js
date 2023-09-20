@@ -5,6 +5,9 @@ const port = process.env.PORT || 3000; // Imposta la porta del server
 // Supponiamo che tu abbia già caricato le tue Haiku dal file JSON in una variabile chiamata "haikuData"
 const haikuData = require('./haiku_data.json');
 
+// Serve la directory contenente index.html come pagina predefinita
+app.use(express.static('public'));
+
 // Endpoint per ottenere tutte le Haiku
 app.get('/getAll', (req, res) => {
   res.json(haikuData);
